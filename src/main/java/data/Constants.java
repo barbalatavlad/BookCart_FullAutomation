@@ -9,6 +9,7 @@ public class Constants {
     public static final String API_BUTTON_TEXT = "Swagger";
     public static final String GIT_BUTTON_TEXT = "GitHub";
     public static final String BIOGRAPHY_BUTTON_TEXT = "Biography";
+    public static final String FICTION_BUTTON_TEXT = "Fiction";
 
     // Colors
 
