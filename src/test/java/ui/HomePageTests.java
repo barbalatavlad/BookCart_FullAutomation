@@ -22,7 +22,7 @@ public class HomePageTests extends BaseTest {
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.verifyFictionCategoryIsThere());
         String actualCategoryText = homePage.getFictionCategoryText();
-        String expectedCategoryText = "Fiction";
+        String expectedCategoryText = Constants.FICTION_BUTTON_TEXT;
         Assertions.assertEquals(expectedCategoryText, actualCategoryText);
     }
 
