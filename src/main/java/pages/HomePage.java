@@ -71,5 +71,4 @@ public class HomePage extends BasePage {
     public String getRomanceCategoryText() {
         return romanceCategory.getText();
     }
-
 }
