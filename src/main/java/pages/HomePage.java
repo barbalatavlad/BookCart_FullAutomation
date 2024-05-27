@@ -74,7 +74,8 @@ public class HomePage extends BasePage {
     public String getRomanceCategoryText() {
         return romanceCategory.getText();
     }
-    public void clickHpThePrisoner(){
+
+    public void clickHpThePrisoner() {
         HpThePrisoner.click();
     }
 }
