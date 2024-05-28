@@ -22,6 +22,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'Romance')]")
     WebElement romanceCategory;
 
+    @FindBy(xpath = "(//div[@class='card-title my-2'])[2]")
+    WebElement HpThePrisoner;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -70,5 +73,9 @@ public class HomePage extends BasePage {
 
     public String getRomanceCategoryText() {
         return romanceCategory.getText();
+    }
+
+    public void clickHpThePrisoner() {
+        HpThePrisoner.click();
     }
 }

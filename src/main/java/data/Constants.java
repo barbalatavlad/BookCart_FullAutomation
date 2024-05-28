@@ -24,6 +24,8 @@ public class Constants {
 
     public static final String ROMANCE_BUTTON_TEXT = "Romance";
 
+    public static final String TITLE_TEXT = "Similar Books";
+
 
     // Colors
 
