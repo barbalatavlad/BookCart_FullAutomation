@@ -2,65 +2,116 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class HeaderPage extends BasePage {
 
+    @FindBy(css = ".mat-toolbar.mat-primary")
+    WebElement headerColor;
+
+    @FindBy(xpath = "//span[contains(text(),'Book Cart')]")
+    WebElement homebutton;
+
+    @FindBy(xpath = "//span[contains(text(),'Book Cart')]")
+    WebElement homebuttonText;
+
+    @FindBy(css = ".ng-untouched .mat-mdc-autocomplete-trigger")
+    WebElement searchbar;
+
+    @FindBy(xpath = "//input[@type='search']")
+    WebElement searchbarText;
+
+    @FindBy(css = ".mat-badge")
+    WebElement shoppingCartButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Login')]")
+    WebElement loginButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Login')]")
+    WebElement loginButtonText;
+
+    @FindBy(xpath = "//span[contains(text(),'Swagger')]")
+    WebElement apiButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Swagger')]")
+    WebElement apiButtonText;
+
+    @FindBy(xpath = "//span[contains(text(),' GitHub ')]")
+    WebElement gitButton;
+
+    @FindBy(xpath = "//span[contains(text(),' GitHub ')]")
+    WebElement gitButtonText;
+
+
     public HeaderPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
     public String getHeaderColor() {
-        return driver.findElement(By.cssSelector(".mat-toolbar.mat-primary")).getCssValue("background");
+        waitUntilElementIsDisplayed(headerColor);
+        return headerColor.getCssValue("background");
     }
 
     public boolean verifyHomebuttonIsThere() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Book Cart')]")).isDisplayed();
+        waitUntilElementIsDisplayed(homebutton);
+        return homebutton.isDisplayed();
     }
 
     public String getHomebuttonText() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Book Cart')]")).getText();
+        waitUntilElementIsDisplayed(homebuttonText);
+        return homebuttonText.getText();
     }
 
     public boolean verifySearchbarIsThere() {
-        return driver.findElement(By.cssSelector(".ng-untouched .mat-mdc-autocomplete-trigger")).isDisplayed();
+        waitUntilElementIsDisplayed(searchbar);
+        return searchbar.isDisplayed();
     }
 
     public String getSearchBarText() {
-        return driver.findElement(By.xpath("//input[@type='search']")).getText();
+        waitUntilElementIsDisplayed(searchbarText);
+        return searchbarText.getText();
     }
 
     public boolean verifyShoppingCartButtonIsThere() {
-        return driver.findElement(By.cssSelector(".mat-badge")).isDisplayed();
+        waitUntilElementIsDisplayed(shoppingCartButton);
+        return shoppingCartButton.isDisplayed();
     }
 
     public boolean verifyLoginButtonIsThere() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Login')]")).isDisplayed();
+        waitUntilElementIsDisplayed(loginButton);
+        return loginButton.isDisplayed();
     }
 
     public String getLoginButtonText() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Login')]")).getText();
+        waitUntilElementIsDisplayed(loginButtonText);
+        return loginButtonText.getText();
     }
 
     public boolean verifyApiButtonIsThere() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Swagger')]")).isDisplayed();
+        waitUntilElementIsDisplayed(apiButton);
+        return apiButton.isDisplayed();
     }
 
     public String getApiButtonText() {
-        return driver.findElement(By.xpath("//span[contains(text(),'Swagger')]")).getText();
+        waitUntilElementIsDisplayed(apiButtonText);
+        return apiButtonText.getText();
     }
 
     public boolean verifyGitButtonIsThere() {
-        return driver.findElement(By.xpath("//span[contains(text(),' GitHub ')]")).isDisplayed();
+        waitUntilElementIsDisplayed(gitButton);
+        return gitButton.isDisplayed();
     }
 
     public String getGitButtonText() {
-        return driver.findElement(By.xpath("//span[contains(text(),' GitHub ')]")).getText();
+        waitUntilElementIsDisplayed(gitButtonText);
+        return gitButtonText.getText();
     }
 
     public int getAllBooksNumberFromHomepage() {
         return driver.findElements(By.cssSelector(".p-1.ng-star-inserted")).size();
     }
-
-
 }

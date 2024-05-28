@@ -1,13 +1,14 @@
 package api;
 
 import io.restassured.RestAssured;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BaseTest {
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         RestAssured.baseURI = "https://bookcart.azurewebsites.net";
     }
 
@@ -18,6 +19,4 @@ public class BaseTest {
                 .statusCode(200)
                 .log().all();
     }
-
-
 }

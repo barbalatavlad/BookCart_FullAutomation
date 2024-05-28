@@ -1,6 +1,7 @@
 package ui;
 
 import data.Constants;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +32,7 @@ public class HomePageTests extends BaseTest {
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.verifyMysteryCategoryIsThere());
         String actualCategory = homePage.getMysteryCategoryText();
-        String expectedCategory = "Mystery";
+        String expectedCategory = Constants.MYSTERY_BUTTON_TEXT;
         Assertions.assertEquals(expectedCategory, actualCategory);
     }
 
@@ -40,7 +41,7 @@ public class HomePageTests extends BaseTest {
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.verifyFantasyCategoryIsThere());
         String actualCategory = homePage.getFantasyCategoryText();
-        String expectedCategory = "Fantasy";
+        String expectedCategory = Constants.FANTASY_BUTTON_TEXT;
         Assertions.assertEquals(expectedCategory, actualCategory);
     }
 
@@ -49,7 +50,7 @@ public class HomePageTests extends BaseTest {
         HomePage homePage = new HomePage(driver);
         Assertions.assertTrue(homePage.verifyRomanceCategoryIsThere());
         String actualCategory = homePage.getRomanceCategoryText();
-        String expectedCategory = "Romance";
+        String expectedCategory = Constants.ROMANCE_BUTTON_TEXT;
         Assertions.assertEquals(expectedCategory, actualCategory);
     }
 }
